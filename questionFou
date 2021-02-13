@@ -1,0 +1,23 @@
+%{
+ #include<stdio.h>
+/*global variables declarations*/
+int acceptStatus=0;
+
+%}
+
+%%
+([is|am|are|were|was|be|being|been|do|does|did|will|would|should|can|could|has|have|had|go])+ { printf("Accepted");accept=1; if (accept==0)printf("Not Accepted")} /* rule for accepting*/
+
+
+
+%%
+
+int main(int argc[],char *argv[])
+{
+
+ yylex();/*entry point for scanner*/
+
+ 
+ return 0;
+}
+
